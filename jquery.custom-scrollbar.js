@@ -599,7 +599,7 @@
       },
 
       offsetComponent: function () {
-        return "left";
+        return "margin-left";
       },
 
       wheelDelta: function (deltaX, deltaY) {
@@ -667,7 +667,7 @@
       },
 
       offsetComponent: function () {
-        return "top";
+        return "margin-top";
       },
 
       wheelDelta: function (deltaX, deltaY) {
