@@ -11,10 +11,6 @@
   overflow: hidden;
 }
 
-.scrollable .viewport .overview {
-  position: absolute;
-}
-
 .scrollable .scroll-bar {
   display: none;
 }
