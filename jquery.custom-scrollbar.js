@@ -236,7 +236,7 @@
 
       calculateViewPortSize: function () {
         var elementSize = this.sizing.size(this.scrollable.$element);
-        if (elementSize > 0 && !this.maxSizeUsed) {
+        if (elementSize > 0) {
           this.viewPortSize = elementSize;
           this.maxSizeUsed = false;
         }
