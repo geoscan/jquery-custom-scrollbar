@@ -215,7 +215,7 @@
     Scrollbar.prototype = {
 
       resize: function (keepPosition) {
-        this.overviewSize = this.sizing.size(this.scrollable.$overview);
+        this.overviewSize = this.sizing.outerSize(this.scrollable.$overview);
         this.calculateViewPortSize();
         this.sizing.size(this.scrollable.$viewPort, this.viewPortSize);
         this.ratio = this.viewPortSize / this.overviewSize;
@@ -451,7 +451,7 @@
       },
 
       thumbPosition: function () {
-        return this.$thumb.position()[this.sizing.offsetComponent()];
+        return parseInt(this.$thumb.css(this.sizing.offsetComponent()));
       },
 
       scrollOverviewBy: function (delta) {
@@ -460,7 +460,7 @@
       },
 
       overviewPosition: function () {
-        return -this.scrollable.$overview.position()[this.sizing.offsetComponent()];
+        return -parseInt(this.scrollable.$overview.css(this.sizing.offsetComponent()));
       },
 
       scrollOverviewTo: function (overviewPosition, animate) {
@@ -531,7 +531,7 @@
       },
 
       calculateMaxOverviewPosition: function () {
-        return Math.max(0, this.sizing.size(this.scrollable.$overview) - this.sizing.size(this.scrollable.$viewPort));
+        return Math.max(0, this.sizing.outerSize(this.scrollable.$overview) - this.sizing.size(this.scrollable.$viewPort));
       },
 
       setScrollEvent: function (event) {
@@ -576,6 +576,10 @@
           return $el.width(arg);
         else
           return $el.width();
+      },
+
+      outerSize: function ($el) {
+            return $el.outerWidth();
       },
 
       minSize: function ($el) {
@@ -644,6 +648,10 @@
           return $el.height(arg);
         else
           return $el.height();
+      },
+
+      outerSize: function ($el) {
+          return $el.outerHeight();
       },
 
       minSize: function ($el) {
