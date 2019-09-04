@@ -1,5 +1,14 @@
-(function ($) {
+(function( factory ) {
+	if ( typeof define === "function" && define.amd ) {
 
+		// AMD. Register as an anonymous module.
+		define([ "jquery" ], factory );
+	} else {
+
+		// Browser globals
+		factory( jQuery );
+	}
+}(function( $ ) {
   $.fn.customScrollbar = function (options, args) {
 
     var defaultOptions = {
@@ -817,4 +826,4 @@
     return ($.event.dispatch || $.event.handle).apply(this, args);
   }
 
-})(jQuery);
+}));
